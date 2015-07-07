@@ -20,4 +20,8 @@ public class StringUtil {
     public static boolean isEmpty(String s) {
         return Objects.equals(s, "");
     }
+
+    public static String erase(String str, int from, int to) {
+        return str;
+    }
 }
