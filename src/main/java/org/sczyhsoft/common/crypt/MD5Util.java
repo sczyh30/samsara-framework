@@ -4,7 +4,7 @@ package org.sczyhsoft.common.crypt;
  * ScZyhSoft Common Library
  * MD5加密
  * @author sczyh30
- * @version 0.1
+ * @version 0.11-build 2 2015-7-7
  * 本次改进：防止空值
  * 下一版本：采用类似Optional的容器
  */
