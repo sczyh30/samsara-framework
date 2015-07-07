@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/LICENSE.md" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/sczyhsoft/common/crypt/MD5Util.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/org/sczyhsoft/common/crypt/SHA1Util.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/org/sczyhsoft/common/util/Optional.java" charset="UTF-8" />
   </component>
 </project>
