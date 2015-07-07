@@ -7,29 +7,36 @@ import java.security.NoSuchAlgorithmException;
  * ScZyhSoft Common Library
  * SHA1加密
  * @author sczyh30
- * @version 0.1
- * 下一版本：避免NullPointer，模仿JDK1.8的Optional制作工具类
+ * @version 0.11
+ * 本次改进：防止空值
+ * 下一版本：采用类似Optional的容器
  */
 public class SHA1Util {
     public static String SHA1(String decript) {
-        try {
-            MessageDigest digest = java.security.MessageDigest.getInstance("SHA-1");
-            digest.update(decript.getBytes());
-            byte messageDigest[] = digest.digest();
-            StringBuilder hexString = new StringBuilder();
-            //字节数组转换为十六进制数
-            for (byte aMessageDigest : messageDigest) {
-                String shaHex = Integer.toHexString(aMessageDigest & 0xFF);
-                if (shaHex.length() < 2) {
-                    hexString.append(0);
+        if(decript != null) {
+            try {
+                MessageDigest digest = java.security.MessageDigest.getInstance("SHA-1");
+                digest.update(decript.getBytes());
+                byte messageDigest[] = digest.digest();
+                StringBuilder hexString = new StringBuilder();
+                //字节数组转换为十六进制数
+                for (byte aMessageDigest : messageDigest) {
+                    String shaHex = Integer.toHexString(aMessageDigest & 0xFF);
+                    if (shaHex.length() < 2) {
+                        hexString.append(0);
+                    }
+                    hexString.append(shaHex);
                 }
-                hexString.append(shaHex);
+                return hexString.toString();
             }
-            return hexString.toString();
+            catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
         }
-        catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+        else {
+            System.out.println("#E2:Null String at SHA1Util.SHA1");
+            return null;
         }
-        return "";
+        return null;
     }
 }
