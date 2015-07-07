@@ -14,6 +14,9 @@ import java.util.Objects;
  */
 public class StringUtil {
 
+    /**
+     * ÅÐ¶ÏÊÇ·ñÎª¿Õ×Ö·û
+     */
     public static boolean isEmpty(String s) {
         return Objects.equals(s, "");
     }
