@@ -1,4 +1,4 @@
-package org.sczyhsoft.common.util;
+package org.samsara.util;
 
 import java.util.Objects;
 
