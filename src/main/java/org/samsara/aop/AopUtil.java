@@ -1,6 +1,7 @@
 package org.samsara.aop;
 
 import org.samsara.aop.framework.AopException;
+import org.samsara.aop.framework.NoSuchPointcutException;
 import org.samsara.aop.framework.annotation.*;
 
 import java.lang.reflect.Method;
@@ -32,7 +33,7 @@ public class AopUtil {
      */
     public static String getPointcutName(Class<?> c) {
         if (!isAspect(c)) {
-            throw new AopException("Not a Aspect Class");
+            throw new AopException(c.getName() + " is not an aspect class");
         } else {
             Method[] methods = c.getMethods();
             for (Method method : methods) {
@@ -40,7 +41,7 @@ public class AopUtil {
                     return method.getName();
             }
         }
-        return "";
+        throw new NoSuchPointcutException("Aspect class: " + c.getName() + " do not have a pointcut");
     }
 
     /**

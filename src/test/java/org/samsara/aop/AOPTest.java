@@ -1,6 +1,7 @@
 package org.samsara.aop;
 
 import org.junit.Test;
+import org.samsara.aop.framework.AopException;
 import org.samsara.aop.framework.annotation.Pointcut;
 
 /**
@@ -12,13 +13,8 @@ public class AOPTest {
 
     @Test
     public void test() {
-        if (AopUtil.isAspect(c)) {
-            try {
-                String scope = c.getMethod(AopUtil.getPointcutName(c)).getAnnotation(Pointcut.class).value();
-                System.out.println(scope);
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            }
-        }
+
+        String scope = AopUtil.getScope(c);
+        System.out.println(scope);
     }
 }
