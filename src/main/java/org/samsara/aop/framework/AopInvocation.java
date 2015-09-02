@@ -14,10 +14,12 @@ public class AopInvocation {
     public void doBefore(Class<?> aspect, Object proxy, Object[] args) {
         Method before = AopUtil.getBefore(aspect);
         try {
-            before.invoke(proxy,args);
+            before.invoke(aspect.newInstance(), args);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
             e.printStackTrace();
         }
     }
@@ -25,10 +27,12 @@ public class AopInvocation {
     public void doAfter(Class<?> aspect, Object proxy, Object[] args) {
         Method after = AopUtil.getAfter(aspect);
         try {
-            after.invoke(proxy,args);
+            after.invoke(aspect.newInstance(), args);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
             e.printStackTrace();
         }
     }
