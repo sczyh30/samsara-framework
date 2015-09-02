@@ -8,7 +8,8 @@ import java.lang.reflect.Proxy;
  * Samsara Framework
  * JDK Dynamic Aop Proxy Class
  */
-final class JdkDynamicAopProxy implements InvocationHandler, AopProxy {
+//TODO:this class should not be public!
+public final class JdkDynamicAopProxy implements InvocationHandler, AopProxy {
 
     private Class<?> aspectClass;
     private Object target;

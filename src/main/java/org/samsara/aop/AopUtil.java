@@ -2,6 +2,7 @@ package org.samsara.aop;
 
 import org.samsara.aop.framework.AopException;
 import org.samsara.aop.framework.AopScope;
+import org.samsara.aop.framework.JdkDynamicAopProxy;
 import org.samsara.aop.framework.NoSuchPointcutException;
 import org.samsara.aop.framework.annotation.*;
 import org.samsara.util.MethodUtil;
@@ -26,6 +27,11 @@ public class AopUtil {
         return c.isAnnotationPresent(Aspect.class);
     }
 
+    /**
+     * Check the class if it is an aspect class
+     *
+     * @param c class object
+     */
     public static void checkAspect(Class<?> c) {
         if (!isAspect(c)) {
             throw new AopException(c.getName() + " is not an aspect class");
@@ -122,5 +128,21 @@ public class AopUtil {
             e.printStackTrace();
             return null;
         }
+    }
+
+    /**
+     * This method could generate the proxy instance of the target
+     * wrap the target with aspect class invocation
+     *
+     * @param obj   the target object
+     * @param klass the aspect class
+     * @param <T>   any type
+     * @return the proxy instance of the target
+     * @since 0.0.46b
+     */
+    public static <T> Object getProxyObject(T obj, Class<?> klass) {
+        JdkDynamicAopProxy proxy = new JdkDynamicAopProxy(obj);
+        proxy.setAspectClass(klass);
+        return proxy.getProxy();
     }
 }

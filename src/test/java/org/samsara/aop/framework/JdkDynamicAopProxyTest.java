@@ -2,6 +2,7 @@ package org.samsara.aop.framework;
 
 import org.junit.Test;
 import org.samsara.aop.AOPAspect;
+import org.samsara.aop.AopUtil;
 import org.samsara.test.PrintService;
 
 import java.util.ArrayList;
@@ -19,9 +20,7 @@ public class JdkDynamicAopProxyTest {
     public void testInvoke() throws Exception {
 
         PrintService printService = this::processData;
-        JdkDynamicAopProxy jdkDynamicAopProxy = new JdkDynamicAopProxy(printService);
-        jdkDynamicAopProxy.setAspectClass(AOPAspect.class);
-        PrintService proxy = (PrintService) jdkDynamicAopProxy.getProxy();
+        PrintService proxy = (PrintService) AopUtil.getProxyObject(printService, AOPAspect.class);
         proxy.processData();
     }
 
@@ -32,10 +31,10 @@ public class JdkDynamicAopProxyTest {
         list.add(63);
         list.add(12);
         list.add(-8);
-        list.add(4);
+        list.add(94);
         list.stream().map(Math::abs)
                 .filter(x -> x > 60)
-                .sorted((x1, x2) -> x1 > x2 ? x1 : x2)
+                .sorted((x1, x2) -> (x1 > x2 ? x1 : x2))
                 .forEach(System.out::println);
     }
 }
