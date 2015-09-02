@@ -1,8 +1,8 @@
 package org.samsara.aop;
 
 import org.junit.Test;
-import org.samsara.aop.framework.AopException;
-import org.samsara.aop.framework.annotation.Pointcut;
+
+import org.samsara.aop.framework.AopScope;
 
 /**
  * AOP Test Class
@@ -14,7 +14,7 @@ public class AOPTest {
     @Test
     public void test() {
 
-        String scope = AopUtil.getScope(c);
+        AopScope scope = AopUtil.getScope(c);
         System.out.println(scope);
     }
 }

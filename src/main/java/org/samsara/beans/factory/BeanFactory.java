@@ -4,7 +4,7 @@ import org.samsara.beans.BeansException;
 
 /**
  * Samsara Framework
- * Basic Bean Factory
+ * Fucking Bean Factory
  */
 public interface BeanFactory {
 
