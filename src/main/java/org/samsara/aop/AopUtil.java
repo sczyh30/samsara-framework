@@ -82,8 +82,11 @@ public class AopUtil {
         Method method = MethodUtil.getMethodByAnno(c, BeforeAdvice.class);
         if (method != null)
             return method;
-        else
-            throw new AopException("Aspect class: " + c.getName() + " do not have a BeforeAdvice");
+        else {
+            System.out.println("Aspect class: " + c.getName() + " do not have a BeforeAdvice");
+            return null;
+            //throw new AopException("Aspect class: " + c.getName() + " do not have a BeforeAdvice");
+        }
     }
 
     /**
@@ -97,8 +100,11 @@ public class AopUtil {
         Method method = MethodUtil.getMethodByAnno(c, AfterAdvice.class);
         if (method != null)
             return method;
-        else
-            throw new AopException("Aspect class: " + c.getName() + " do not have a BeforeAdvice");
+        else {
+            System.out.println("Aspect class: " + c.getName() + " do not have a AfterAdvice");
+            //throw new AopException("Aspect class: " + c.getName() + " do not have a AfterAdvice");
+            return null;
+        }
     }
 
     /**

@@ -12,7 +12,7 @@ public class AOPAspect {
     public void doPointcut() {
     }
 
-    @BeforeAdvice(value = "doPointCut")
+    //@BeforeAdvice(value = "doPointCut")
     public void beforeAdvice() {
         System.out.println("Aspect Test - Before Advice");
     }
