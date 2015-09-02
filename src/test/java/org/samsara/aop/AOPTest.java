@@ -3,10 +3,6 @@ package org.samsara.aop;
 import org.junit.Test;
 
 import org.samsara.aop.framework.AopScope;
-import org.samsara.test.PrintService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * AOP Test Class
