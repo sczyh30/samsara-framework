@@ -3,7 +3,7 @@ package org.samsara.util;
 import java.util.Objects;
 
 /**
- * ScZyhSoft Common Library
+ * Samsara Common Library
  * Optional Container
  * 此容器可以存储任意对象(包括null)
  * @author sczyh30
