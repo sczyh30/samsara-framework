@@ -6,8 +6,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Samsara Common Library
- * RSA加密
- *
+ * RSA crypt class
  * @author sczyh30
  * @since 0.0.28
  */

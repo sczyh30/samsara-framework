@@ -2,7 +2,7 @@ package org.samsara.util.crypt;
 
 /**
  * Samsara Common Library
- * MD5加密
+ * MD5 crypt class
  * @author sczyh30
  */
 

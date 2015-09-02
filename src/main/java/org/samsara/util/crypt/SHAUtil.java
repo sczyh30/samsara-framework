@@ -7,9 +7,9 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Samsara Common Library
- * SHA加密
+ * SHA crypt class
  * @author sczyh30
- * @version 0.0.28
+ * @since 0.0.28
  */
 public class SHAUtil {
     public static String SHA1(String decript) {

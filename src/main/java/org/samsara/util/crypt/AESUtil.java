@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Samsara Common Library
- * AES加密
+ * AES crypt class
  *
  * @author sczyh30
  */

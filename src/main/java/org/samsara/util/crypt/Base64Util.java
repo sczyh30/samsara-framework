@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * Samsara Common Library
- * Base64编码
+ * Base64 Encoding/Decoding class
  *
  * @author sczyh30
  */
