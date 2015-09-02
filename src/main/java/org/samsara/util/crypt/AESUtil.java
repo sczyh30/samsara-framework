@@ -9,8 +9,7 @@ import java.security.NoSuchAlgorithmException;
  * AES加密
  *
  * @author sczyh30
- * @version 0.0.28
- * @since 2015-8-27
+ * @since 2015-8
  */
 public class AESUtil {
 

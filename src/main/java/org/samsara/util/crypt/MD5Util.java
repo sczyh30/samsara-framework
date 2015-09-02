@@ -4,10 +4,7 @@ package org.samsara.util.crypt;
  * Samsara Common Library
  * MD5加密
  * @author sczyh30
- * @version 0.0.28
- * @since 2015-7-7
- * 本次改进：防止空值
- * 下一版本：采用类似Optional的容器
+ * @since 2015.7
  */
 
 import org.samsara.util.StringUtil;

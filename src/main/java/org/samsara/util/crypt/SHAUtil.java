@@ -10,9 +10,7 @@ import java.security.NoSuchAlgorithmException;
  * SHA加密
  * @author sczyh30
  * @version 0.0.28
- * @since 2015-7-7
- * 本次改进：防止空值 201
- * 下一版本：采用类似Optional的容器
+ * @since 2015.7
  */
 public class SHAUtil {
     public static String SHA1(String decript) {

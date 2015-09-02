@@ -1,4 +1,4 @@
-package org.samsara.aop;
+package org.samsara.aop.advice;
 
 
 public class BeforeAdvice {

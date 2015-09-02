@@ -8,10 +8,7 @@ import java.util.Objects;
  * 字符串操作基本扩展功能
  *
  * @author sczyh30
- * @version 0.0.28
- * @since 2015-7-7
- * issue:on board
- * 下一版本：待定
+ * @since 2015.7
  */
 public class StringUtil {
 

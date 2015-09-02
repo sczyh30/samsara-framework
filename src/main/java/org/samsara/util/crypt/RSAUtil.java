@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
  * RSA加密
  *
  * @author sczyh30
- * @since 2015-8-3
+ * @since 2015.8
  */
 public class RSAUtil {
 

@@ -10,8 +10,6 @@ import java.io.IOException;
  * Base64编码
  *
  * @author sczyh30
- * @version 0.0.28
- * @since 2015-7-24
  */
 public class Base64Util {
 
