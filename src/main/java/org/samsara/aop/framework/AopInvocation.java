@@ -14,30 +14,41 @@ public class AopInvocation {
 
     /**
      * Execute this method before the target
-     *
      * @param aspect the aspect class
      * @param args   the args vars
      */
     public void doBefore(Class<?> aspect, Object[] args) {
-        Method before = AopUtil.getBefore(aspect);
-        if (before != null) {
-            try {
-                before.invoke(aspect.newInstance(), args);
-            } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
-                e.printStackTrace();
+        if (AopUtil.getScope(aspect).isAll()) {
+            Method before = AopUtil.getBefore(aspect);
+            if (before != null) {
+                try {
+                    before.invoke(aspect.newInstance(), args);
+                } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
+
+    /**
+     * Execute this method after the target
+     *
+     * @param aspect the aspect class
+     * @param args   the args vars
+     */
+    public void doAfter(Class<?> aspect, Object[] args) {
+        if (AopUtil.getScope(aspect).isAll()) {
+            Method after = AopUtil.getAfter(aspect);
+            if (after != null) {
+                try {
+                    after.invoke(aspect.newInstance(), args);
+                } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
 
-    public void doAfter(Class<?> aspect, Object[] args) {
-        Method after = AopUtil.getAfter(aspect);
-        if (after != null) {
-            try {
-                after.invoke(aspect.newInstance(), args);
-            } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
 }

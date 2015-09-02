@@ -121,6 +121,7 @@ public class AopUtil {
      * @since 0.0.26
      */
     public static AopScope getScope(Class<?> c) {
+        checkAspect(c);
         try {
             return new AopScope(c.getMethod(getPointcutName(c))
                     .getAnnotation(Pointcut.class).value());
