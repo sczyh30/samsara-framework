@@ -7,7 +7,7 @@ import java.util.Objects;
  * Optional Container
  * 此容器可以存储任意对象(包括null)
  * @author sczyh30
- * @since 2015.7
+ * @since 0.0.13
  * Issue:暂不支持函数式编程接口
  */
 public final class Optional<T> {

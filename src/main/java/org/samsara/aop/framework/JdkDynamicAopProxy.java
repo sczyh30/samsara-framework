@@ -6,7 +6,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * Samsara Framework
- * JDK动态代理实现类
+ * JDK Dynamic Aop Proxy Class
  */
 final class JdkDynamicAopProxy implements InvocationHandler, AopProxy {
 

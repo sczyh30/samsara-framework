@@ -10,7 +10,6 @@ import java.security.NoSuchAlgorithmException;
  * SHA加密
  * @author sczyh30
  * @version 0.0.28
- * @since 2015.7
  */
 public class SHAUtil {
     public static String SHA1(String decript) {

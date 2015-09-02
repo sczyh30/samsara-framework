@@ -4,7 +4,6 @@ package org.samsara.util.crypt;
  * Samsara Common Library
  * MD5加密
  * @author sczyh30
- * @since 2015.7
  */
 
 import org.samsara.util.StringUtil;
