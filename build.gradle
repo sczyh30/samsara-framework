@@ -1,5 +1,5 @@
 group 'org.sczyhsoft.samsara'
-version '0.0.28-beta'
+version '0.0.46-beta'
 
 apply plugin: 'java'
 

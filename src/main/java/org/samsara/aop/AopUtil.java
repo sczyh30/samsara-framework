@@ -59,7 +59,6 @@ public class AopUtil {
     /**
      * Method of getting the pointcut name
      * uses reflection
-     *
      * @param c class object
      * @return the pointcut name in the class
      */
