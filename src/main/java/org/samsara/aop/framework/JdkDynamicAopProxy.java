@@ -36,9 +36,9 @@ final class JdkDynamicAopProxy implements InvocationHandler, AopProxy {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         AopInvocation aopInvocation = new AopInvocation();
-        aopInvocation.doBefore(aspectClass, proxy, args);
+        aopInvocation.doBefore(aspectClass, args);
         Object result = method.invoke(target, args);
-        aopInvocation.doAfter(aspectClass, proxy, args);
+        aopInvocation.doAfter(aspectClass, args);
         return result;
     }
 }

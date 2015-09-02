@@ -8,32 +8,36 @@ import java.lang.reflect.Method;
 /**
  * Samsara Framework
  * Aop Invocation Class
+ * @author sczyh30
  */
 public class AopInvocation {
 
-    public void doBefore(Class<?> aspect, Object proxy, Object[] args) {
+    /**
+     * Execute this method before the target
+     *
+     * @param aspect the aspect class
+     * @param args   the args vars
+     */
+    public void doBefore(Class<?> aspect, Object[] args) {
         Method before = AopUtil.getBefore(aspect);
-        try {
-            before.invoke(aspect.newInstance(), args);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
+        if (before != null) {
+            try {
+                before.invoke(aspect.newInstance(), args);
+            } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void doAfter(Class<?> aspect, Object proxy, Object[] args) {
+    public void doAfter(Class<?> aspect, Object[] args) {
         Method after = AopUtil.getAfter(aspect);
-        try {
-            after.invoke(aspect.newInstance(), args);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
+        if (after != null) {
+            try {
+                after.invoke(aspect.newInstance(), args);
+            } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
+                e.printStackTrace();
+            }
         }
     }
+
 }
