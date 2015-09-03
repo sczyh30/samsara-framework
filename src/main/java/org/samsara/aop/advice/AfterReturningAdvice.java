@@ -1,4 +1,7 @@
 package org.samsara.aop.advice;
 
-public class AfterReturningAdvice {
+import org.aopalliance.aop.Advice;
+
+public class AfterReturningAdvice extends Advice {
+
 }
