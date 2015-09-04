@@ -6,7 +6,7 @@ import org.aopalliance.aop.Advice;
  * Samsara Framework
  * Base interface holding AOP advice
  */
-public class Advisor {
+public interface Advisor {
 
     /**
      * @return the advice part of this aspect

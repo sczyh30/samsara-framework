@@ -1,7 +1,7 @@
 package org.samsara.aop.advice;
 
 /**
- * Pointcut Class
+ * Pointcut Classs
  */
 public class Pointcut {
 }
