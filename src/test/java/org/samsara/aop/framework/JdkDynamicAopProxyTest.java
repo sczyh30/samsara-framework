@@ -8,8 +8,6 @@ import org.samsara.test.PrintService;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Aop JdkDynamicAopProxy Test
  * Test OK

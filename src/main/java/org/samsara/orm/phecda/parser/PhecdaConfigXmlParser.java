@@ -1,5 +1,6 @@
 package org.samsara.orm.phecda.parser;
 
+import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -21,15 +22,16 @@ public class PhecdaConfigXmlParser {
      *
      * @return
      */
-    public List<Element> parseConfig() {
+    public List<Attribute> parseConfig() {
         SAXReader reader = new SAXReader();
         File file = new File("phecda.cfg.xml");
-        Document document = null;
+        Document document;
         try {
             document = reader.read(file);
             Element root = document.getRootElement();
+            List<Attribute> attributes = root.attributes();
             List<Element> childElements = root.elements();
-            return childElements;
+            return attributes;
         } catch (DocumentException e) {
             e.printStackTrace();
             return null;
