@@ -16,7 +16,8 @@ import java.lang.reflect.Method;
  * @author sczyh30
  * My thought：写个AOP太JB蛋疼了。。
  */
-public class AopUtil {
+public final class AopUtil {
+
 
     /**
      * Judge if the class is an aspect class

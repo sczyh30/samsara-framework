@@ -16,7 +16,6 @@ public class JdkDynamicAopProxyTest {
 
     @Test
     public void testInvoke() throws Exception {
-
         PrintService printService = this::processData;
         PrintService proxy = (PrintService) AopUtil.getProxyObject(printService, AOPAspect.class);
         proxy.processData();
