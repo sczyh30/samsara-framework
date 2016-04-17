@@ -1,33 +1,63 @@
-group 'org.sczyhsoft.samsara'
-version '0.0.53-beta'
-
-apply plugin: 'java'
-
-//sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-    //mavenLocal()
+ext {
+    moduleProjects = subprojects.findAll {
+        !it.name.equals('samsara-build-src')
+    }
 }
 
-dependencies {
-    compile "org.scala-lang:scala-library:2.11.6"
-    compile "org.scala-lang:scala-compiler:2.11.6"
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-}
+configure(allprojects) { project ->
+    group = "org.samsara"
 
-project("samsara-core") {
-    // the core
-    description = "Samsara Core"
+    ext.aspectjVersion = "1.8.9"
+    ext.junitVersion = "4.12"
+
+    ext.gradleScriptDir = "${rootProject.projectDir}/gradle"
+
+    apply plugin: "java"
+
+    compileJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    compileTestJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options.compilerArgs += "-parameters"
+    }
+
+
+    repositories {
+        maven {
+            url 'http://maven.oschina.net/content/groups/public/'
+        }
+        mavenCentral()
+    }
 
     dependencies {
-        compile "dom4j:dom4j:1.6.1"
+        testCompile("junit:junit:${junitVersion}")
+    }
+
+}
+
+configure(subprojects) { subproject ->
+
+}
+
+configure(rootProject) {
+    description = "Samsara Framework"
+
+    task api(type: Javadoc) {
 
     }
 }
 
-project("samsara-beans") {
-    description = "Samsara Beans"
+project("samsara-core") {
+    description = "Samsara Core"
+
+}
+
+project("samsara-di") {
+    description = "Samsara DI"
 
     dependencies {
         compile(project(":samsara-core"))
@@ -38,10 +68,8 @@ project("samsara-aop") {
     description = "Samsara AOP"
 
     dependencies {
-        compile(project(":samsara-beans"))
         compile(project(":samsara-core"))
-        compile("aopalliance:aopalliance:1.0")
-        optional("org.aspectj:aspectjweaver:${aspectjVersion}")
-
+        compile 'aopalliance:aopalliance:1.0'
     }
 }
+

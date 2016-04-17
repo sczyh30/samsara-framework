@@ -1,5 +1,6 @@
 /.idea
 .gradle/
 build/
-/samsara-framework.iml
 *.iml
+target/
+build.sh

@@ -1,2 +1,6 @@
-rootProject.name = 'samsara-framework'
+rootProject.name = 'samsara'
+
+include "samsara-core"
+include "samsara-di"
+include "samsara-aop"
 

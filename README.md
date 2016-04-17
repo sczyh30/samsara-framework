@@ -1,9 +1,4 @@
 # Samsara Framework
 
-##框架介绍
-正在**完全改写**，会适当偏向FP/RFP风格~2016敬请期待！
+Refactoring...Will be available in 2016.5.
 
-原先的大部分代码将会删除。
-
-踏歌长行，梦想永在。  
-sczyh30  
