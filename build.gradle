@@ -6,13 +6,13 @@ ext {
 
 configure(allprojects) { project ->
     group = "org.samsara"
+    version = "0.1.0"
 
     ext.aspectjVersion = "1.8.9"
     ext.junitVersion = "4.12"
 
-    ext.gradleScriptDir = "${rootProject.projectDir}/gradle"
-
-    apply plugin: "java"
+    apply plugin: 'java'
+    apply plugin: 'idea'
 
     compileJava {
         sourceCompatibility = 1.8
@@ -22,7 +22,6 @@ configure(allprojects) { project ->
     compileTestJava {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
-        options.compilerArgs += "-parameters"
     }
 
 

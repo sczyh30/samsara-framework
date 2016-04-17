@@ -1,6 +1,7 @@
 /.idea
 .gradle/
 build/
+*/build
 *.iml
 target/
 build.sh
