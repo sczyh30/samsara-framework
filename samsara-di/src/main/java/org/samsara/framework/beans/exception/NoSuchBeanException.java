@@ -6,11 +6,28 @@ package org.samsara.framework.beans.exception;
  */
 public class NoSuchBeanException extends BeansException {
 
-    public NoSuchBeanException(String msg) {
-        super(msg);
+    private String beanName;
+
+    private Class<?> beanType;
+
+    public NoSuchBeanException(String name) {
+        super("No bean named " + name + " is defined");
+        this.beanName = name;
     }
 
-    public NoSuchBeanException(String msg, Throwable cause) {
-        super(msg, cause);
+    public NoSuchBeanException(String name, String message) {
+        super("No bean named " + name + " is defined:" + message);
+        this.beanName = name;
     }
+
+    public NoSuchBeanException(Class<?> type) {
+        super("No appropriate bean of type [" + type.getName() + "] is defined");
+        this.beanType = type;
+    }
+
+    public NoSuchBeanException(Class<?> type, String message) {
+        super("No appropriate bean of type [" + type.getName() + "] is defined:" + message);
+        this.beanType = type;
+    }
+
 }

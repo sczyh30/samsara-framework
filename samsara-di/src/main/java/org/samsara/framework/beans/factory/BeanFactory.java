@@ -17,4 +17,6 @@ public interface BeanFactory {
     <T> T getBean(Class<T> type) throws BeansException;
 
     Object getBean(String name, Object... args) throws BeansException;
+
+    boolean exist(String name);
 }
