@@ -6,7 +6,7 @@ ext {
 
 configure(allprojects) { project ->
     group = "org.samsara"
-    version = "0.1.0"
+    version = "0.1.1"
 
     ext.aspectjVersion = "1.8.9"
     ext.junitVersion = "4.12"
@@ -53,6 +53,11 @@ configure(rootProject) {
 project("samsara-core") {
     description = "Samsara Core"
 
+    dependencies {
+        compile 'org.yaml:snakeyaml:1.17'
+        compile 'dom4j:dom4j:1.6.1'
+    }
+
 }
 
 project("samsara-di") {
@@ -69,6 +74,7 @@ project("samsara-aop") {
     dependencies {
         compile(project(":samsara-core"))
         compile 'aopalliance:aopalliance:1.0'
+        compile("org.aspectj:aspectjweaver:${aspectjVersion}")
     }
 }
 

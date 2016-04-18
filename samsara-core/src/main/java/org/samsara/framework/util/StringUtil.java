@@ -30,7 +30,7 @@ public class StringUtil {
             return hexString.toString().toUpperCase();
         }
         else {
-            throw new RuntimeException("NULL String when converting at StringUtil.bytes2hex");
+            throw new NullPointerException("NULL String when converting at StringUtil.bytes2hex");
         }
     }
 

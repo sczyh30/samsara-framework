@@ -6,6 +6,7 @@ import org.aopalliance.aop.Advice;
  * Samsara Framework
  * Base interface holding AOP advice
  */
+@FunctionalInterface
 public interface Advisor {
 
     /**

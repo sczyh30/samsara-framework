@@ -9,26 +9,37 @@ package org.samsara.framework.util.crypt;
 import org.samsara.framework.util.StringUtil;
 
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
+/**
+ * Samsara Common Library<br>
+ * MD5 encrypt class
+ * @author sczyh30
+ */
 public class MD5Util {
-    public static String MD5(String s) {
-        if(s != null) {
+
+    /**
+     * <p>Use MD5 algorithm to hash the string.</p>
+     * This might not be very safe due to its length.
+     * @param str string
+     * @return encrypted string
+     */
+    public static String md5(String str) {
+        if(str != null) {
             try {
-                byte[] btInput = s.getBytes();
-                // 获得MD5摘要算法的 MessageDigest 对象
+                byte[] btInput = str.getBytes();
                 MessageDigest mdInst = MessageDigest.getInstance("MD5");
-                mdInst.update(btInput); // 使用指定的字节更新摘要
-                byte[] md = mdInst.digest(); // 获得密文
+                mdInst.update(btInput); // update the digest
+                byte[] md = mdInst.digest(); // get the encrypted byte stream
 
                 return StringUtil.bytes2hex(md);
-            } catch (Exception e) {
+            } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
-                return null;
+                return "";
             }
         }
         else {
-            System.out.println("#E2:Null String at MD5Util.MD5");
-            return "";
+            throw new EncryptException("null string parameter is invalid");
         }
     }
 }
