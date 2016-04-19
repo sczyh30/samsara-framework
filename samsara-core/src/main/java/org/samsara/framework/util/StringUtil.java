@@ -17,6 +17,9 @@ public class StringUtil {
         return Objects.equals(s, "");
     }
 
+    /**
+     * Convert the byte array to string
+     */
     public static String bytes2hex(byte[] bytes) {
         if(Objects.nonNull(bytes)) {
             StringBuilder hexString = new StringBuilder();

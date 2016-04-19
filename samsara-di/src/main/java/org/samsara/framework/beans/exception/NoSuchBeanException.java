@@ -3,6 +3,8 @@ package org.samsara.framework.beans.exception;
 /**
  * Samsara DI
  * No Such Bean Exception
+ *
+ * @author sczyh30
  */
 public class NoSuchBeanException extends BeansException {
 

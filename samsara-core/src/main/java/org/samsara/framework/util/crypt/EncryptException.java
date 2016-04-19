@@ -5,6 +5,8 @@ import org.samsara.framework.core.CommonRuntimeException;
 /**
  * Samsara Framework
  * Encrypt Exception
+ *
+ * @author sczyh30
  */
 class EncryptException extends CommonRuntimeException {
 
