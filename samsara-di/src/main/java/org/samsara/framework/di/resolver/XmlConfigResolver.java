@@ -41,17 +41,13 @@ public class XmlConfigResolver implements ConfigResolver {
                 throw new ConfigResolveException("Invalid xml config: root element must be `context`");
             }
             else {
-                resolveSamsaraComponents(rootElement);
+                // resolveSamsaraComponents(rootElement);
             }
         } catch (DocumentException | IOException e) {
             destroy();
             e.printStackTrace();
         }
         return false;
-    }
-
-    private void resolveSamsaraComponents(Element rootElement) {
-
     }
 
     private void destroy() {

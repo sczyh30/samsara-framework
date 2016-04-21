@@ -4,11 +4,11 @@ import java.util.Objects;
 
 /**
  * Samsara Common Library
- * String Util Class
+ * String Utils Class
  *
  * @author sczyh30
  */
-public class StringUtil {
+public class StringUtils {
 
     /**
      * isEmpty
@@ -33,7 +33,7 @@ public class StringUtil {
             return hexString.toString().toUpperCase();
         }
         else {
-            throw new NullPointerException("NULL String when converting at StringUtil.bytes2hex");
+            throw new NullPointerException("NULL String when converting at StringUtils.bytes2hex");
         }
     }
 

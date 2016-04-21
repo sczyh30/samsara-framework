@@ -1,4 +1,4 @@
 # Samsara Framework
 
-Refactoring...Will be available in 2016.5.
+Dev Paused. Maybe continue in 2016.5.
 

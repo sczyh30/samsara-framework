@@ -10,9 +10,7 @@ import java.util.Optional;
  */
 public final class Right<A, B> extends Either<A, B> {
 
-    private B b;
-
-    private Right() {}
+    private final B b;
 
     public Right(B b) {
         this.b = b;

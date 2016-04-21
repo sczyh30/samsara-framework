@@ -6,7 +6,7 @@ package org.samsara.framework.util.crypt;
  * @author sczyh30
  */
 
-import org.samsara.framework.util.StringUtil;
+import org.samsara.framework.util.StringUtils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -33,7 +33,7 @@ public class MD5Util {
                 mdInst.update(btInput); // update the digest
                 byte[] md = mdInst.digest(); // get the encrypted byte stream
 
-                return StringUtil.bytes2hex(md);
+                return StringUtils.bytes2hex(md);
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
                 return "";

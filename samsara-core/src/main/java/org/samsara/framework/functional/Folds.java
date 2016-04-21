@@ -18,7 +18,7 @@ public class Folds {
      * A wrapper class for the fucking lambda closure
      */
     private static class Wrapper<T> {
-        volatile T t;
+        volatile T t; // do have side effects
 
         Wrapper(T t) {
             this.t = t;

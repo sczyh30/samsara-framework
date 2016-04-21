@@ -1,6 +1,6 @@
 package org.samsara.framework.util.crypt;
 
-import org.samsara.framework.util.StringUtil;
+import org.samsara.framework.util.StringUtils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -30,7 +30,7 @@ public class SHAUtil {
                 digest.update(str.getBytes());
                 byte messageDigest[] = digest.digest();
 
-                return StringUtil.bytes2hex(messageDigest);
+                return StringUtils.bytes2hex(messageDigest);
             }
             catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();

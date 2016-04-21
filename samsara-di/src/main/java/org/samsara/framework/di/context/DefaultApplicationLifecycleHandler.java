@@ -13,7 +13,9 @@ import java.util.function.Supplier;
  *
  * @author sczyh30
  */
-public class DefaultApplicationLifecycleHandler implements ApplicationLifecycleHandler {
+public class DefaultApplicationLifecycleHandler implements LifecycleHandler {
+
+    private volatile List<Supplier<CompletableFuture<?>>> startHooks = new ArrayList<>();
 
     private volatile List<Supplier<CompletableFuture<?>>> stopHooks = new ArrayList<>();
 
@@ -23,16 +25,29 @@ public class DefaultApplicationLifecycleHandler implements ApplicationLifecycleH
     }
 
     @Override
-    public void start() {
+    public synchronized void addStartHook(Supplier<CompletableFuture<?>> hook) {
+        startHooks.add(hook);
+    }
 
+    @Override
+    public void start() {
+        foldInvoke(startHooks);
     }
 
     @Override
     public void stop() {
+        foldInvoke(stopHooks);
+    }
+
+    /**
+     * Invoke fold operation on the hook list
+     * @param hooks hook list, maybe onStart or onStop
+     */
+    private void foldInvoke(List<Supplier<CompletableFuture<?>>> hooks) {
         Folds.<Supplier<CompletableFuture<?>>, CompletableFuture<?>>foldl((future, hook) ->
-                future.thenCompose(t ->
-                        hook.get()),
-                CompletableFuture.completedFuture(new Object()), stopHooks);
+                        future.thenCompose(t ->
+                                hook.get()),
+                CompletableFuture.completedFuture(new Object()), hooks);
     }
 
     @Override

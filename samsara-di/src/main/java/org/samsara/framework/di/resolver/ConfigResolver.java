@@ -10,6 +10,10 @@ import org.samsara.framework.core.io.Resource;
  */
 public interface ConfigResolver {
 
+    /**
+     * Resolve a resource object
+     * @param resource resource object
+     */
     boolean resolve(Resource resource);
 
 }

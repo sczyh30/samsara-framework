@@ -5,6 +5,8 @@ import java.util.function.Predicate;
 /**
  * Samsara Common Library
  * Refinement assert
+ *
+ * @author sczyh30
  */
 public final class Refinement { //TODO: implement refinement types using annotation
 
